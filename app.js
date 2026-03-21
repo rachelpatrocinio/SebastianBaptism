@@ -58,3 +58,41 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+
+
+
+/*
+const track = document.querySelector('.carousel-track');
+let scroll = 0;
+const speed = 1; // velocità px per frame
+
+const trackWidth = track.scrollWidth / 2; // metà track duplicata
+
+function animate() {
+  scroll += speed;
+  if(scroll >= trackWidth){
+    scroll = 0; // reset invisibile
+  }
+  track.style.transform = `translateX(-${scroll}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
+*/
+
+const track = document.querySelector('.carousel-track');
+let scroll = 0;
+const speed = 0.7; // velocità in px per frame
+
+const trackWidth = track.scrollWidth / 2; // metà track duplicata
+
+function animate() {
+  scroll += speed;
+  if(scroll >= trackWidth){
+    scroll = 0; // reset invisibile, senza scatto
+  }
+  track.style.transform = `translateX(-${scroll}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
