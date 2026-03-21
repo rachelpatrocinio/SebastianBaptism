@@ -185,6 +185,7 @@ body{
   pointer-events: none; /* non interferisce con il click */
   z-index: 999;
   animation: bounce 1.5s infinite alternate;
+  padding-bottom: 80px;
 }
 
 #scrollHint.show {
@@ -197,4 +198,9 @@ body{
 @keyframes bounce {
   0% { transform: translateX(-50%) translateY(0); }
   100% { transform: translateX(-50%) translateY(10px); }
+}
+
+
+.celebration img{
+    object-fit: cover;
 }
