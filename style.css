@@ -1,0 +1,71 @@
+* {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+body{
+    margin: 0 auto;
+    min-height: 100vh;
+    color: #6585A7;
+    background-color: #EEE6D4;
+}
+
+@media screen and (min-width: 698px){
+    .main-content{
+        width: 600px;
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Intro immagine */
+#intro {
+    /*
+    position: fixed;
+    inset: 0;
+    */
+    height: 100vh;
+    z-index: 10;
+}
+
+#intro img {
+    /*width: 100%;*/
+    height: 100vh;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Video fullscreen */
+#myVideo {
+    /*position: fixed;*/
+    inset: 0;
+    /*width: 100%;*/
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    z-index: 5;
+}
+
+#introVideo {
+    display: none;
+    height: 100vh;
+}
