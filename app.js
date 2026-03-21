@@ -60,7 +60,7 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 
-
+/*
 const track = document.querySelector('.carousel-track');
 let scroll = 0;
 const speed = 1; // velocità px per frame
@@ -71,6 +71,34 @@ function animate() {
   scroll += speed;
   if(scroll >= trackWidth){
     scroll = 0; // reset invisibile
+  }
+  track.style.transform = `translateX(-${scroll}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
+*/
+const track = document.querySelector('.carousel-track');
+let scroll = 0;
+const speed = 1; // px/frame
+
+// calcola larghezza della metà track originale dinamicamente
+let firstHalfWidth = 0;
+function updateWidth() {
+  const imgs = track.querySelectorAll('img');
+  const halfCount = imgs.length / 2; // metà duplicata
+  firstHalfWidth = 0;
+  for(let i=0; i<halfCount; i++){
+    firstHalfWidth += imgs[i].offsetWidth + 20; // 20 = gap
+  }
+}
+updateWidth();
+window.addEventListener('resize', updateWidth);
+
+function animate() {
+  scroll += speed;
+  if(scroll >= firstHalfWidth){
+    scroll = 0; // reset invisibile grazie al duplicato
   }
   track.style.transform = `translateX(-${scroll}px)`;
   requestAnimationFrame(animate);

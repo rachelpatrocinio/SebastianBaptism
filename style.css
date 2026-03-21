@@ -131,7 +131,7 @@ body{
         transform: translateX(0px);
     }
 }
-
+/*
 .carousel-container {
   width: 100%;
   overflow: hidden;
@@ -148,5 +148,26 @@ body{
   width: calc((100% - 4 * 20px) / 3);
   flex-shrink: 0;
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+*/
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.carousel-track img {
+  width: calc((100% - 2*20px)/3); /* 3 immagini visibili desktop */
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
