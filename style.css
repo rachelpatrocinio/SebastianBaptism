@@ -132,7 +132,6 @@ body{
     }
 }
 
-/*
 .carousel-container {
   width: 100%;
   overflow: hidden;
@@ -150,24 +149,4 @@ body{
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-*/
-.carousel-container {
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.carousel-track {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px; /* spazio tra le immagini */
-}
-
-.carousel-track img {
-  width: calc((100% - 2 * 20px) / 3); /* 3 immagini visibili contemporaneamente */
-  flex-shrink: 0;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  object-fit: cover;
 }
