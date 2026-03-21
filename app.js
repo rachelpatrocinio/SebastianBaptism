@@ -58,23 +58,3 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
-
-const carousel = document.querySelector(".carousel-container");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = "translateY(0)";
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1 },
-);
-
-carousel.style.opacity = 0;
-carousel.style.transform = "translateY(50px)";
-carousel.style.transition = "opacity 1s ease, transform 1s ease";
-
-observer.observe(carousel);
