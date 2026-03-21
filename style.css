@@ -59,7 +59,7 @@ body{
     /*position: fixed;*/
     inset: 0;
     /*width: 100%;*/
-    height: 100vh;
+    /*height: 100vh;*/
     object-fit: cover;
     display: none;
     z-index: 5;
@@ -67,5 +67,5 @@ body{
 
 #introVideo {
     display: none;
-    height: 100vh;
+    /*height: 100vh;*/
 }
