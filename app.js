@@ -59,25 +59,7 @@ function reveal() {
 
 window.addEventListener("scroll", reveal);
 
-
 /*
-const track = document.querySelector('.carousel-track');
-let scroll = 0;
-const speed = 1; // velocità px per frame
-
-const trackWidth = track.scrollWidth / 2; // metà track duplicata
-
-function animate() {
-  scroll += speed;
-  if(scroll >= trackWidth){
-    scroll = 0; // reset invisibile
-  }
-  track.style.transform = `translateX(-${scroll}px)`;
-  requestAnimationFrame(animate);
-}
-
-animate();
-*/
 const track = document.querySelector('.carousel-track');
 let scroll = 0;
 const speed = 1; // px/frame
@@ -96,6 +78,7 @@ updateWidth();
 window.addEventListener('resize', updateWidth);
 
 function animate() {
+    console.log('animate')
   scroll += speed;
   if(scroll >= firstHalfWidth){
     scroll = 0; // reset invisibile grazie al duplicato
@@ -103,5 +86,39 @@ function animate() {
   track.style.transform = `translateX(-${scroll}px)`;
   requestAnimationFrame(animate);
 }
-
 animate();
+*/
+
+const tracks = document.querySelectorAll('.carousel-track'); // tutti i caroselli
+const speed = 1; // px/frame
+const gaps = 20;  // gap tra immagini
+
+tracks.forEach(track => {
+  let scroll = 0;
+
+  // calcola larghezza metà track duplicata
+  let firstHalfWidth = 0;
+  function updateWidth() {
+    const imgs = track.querySelectorAll('img');
+    const halfCount = imgs.length / 2;
+    firstHalfWidth = 0;
+    for(let i = 0; i < halfCount; i++){
+      firstHalfWidth += imgs[i].offsetWidth + gaps;
+    }
+  }
+  updateWidth();
+  window.addEventListener('resize', updateWidth);
+
+  // funzione animazione
+  function animate() {
+    scroll += speed;
+    if(scroll >= firstHalfWidth){
+      scroll = 0;
+    }
+    track.style.transform = `translateX(-${scroll}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+});
+
