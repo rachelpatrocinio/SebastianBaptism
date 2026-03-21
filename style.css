@@ -171,3 +171,28 @@ body{
   object-fit: cover;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+
+
+#scrollHint {
+  position: absolute;
+  bottom: 20px; /* distanza dal bordo inferiore */
+  left: 50%;
+  transform: translateX(-50%) translateY(20px); /* inizialmente leggermente nascosto */
+  font-size: 6rem;
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.8s ease;
+  pointer-events: none; /* non interferisce con il click */
+  z-index: 999;
+  animation: bounce 1.5s infinite alternate;
+}
+
+#scrollHint.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes bounce {
+  0% { transform: translateX(-50%) translateY(0); }
+  100% { transform: translateX(-50%) translateY(10px); }
+}

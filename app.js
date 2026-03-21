@@ -35,9 +35,14 @@ video.addEventListener("ended", () => {
     }, 50);
     introVideo.play();
 
-    // 👉 ora si può scrollare
-    document.body.style.overflow = "auto";
-    document.querySelector("main").style.opacity = "1";
+    introVideo.addEventListener("ended", () =>{
+        // Mostra l'icona scroll
+        const scrollHint = document.getElementById("scrollHint");
+        scrollHint.classList.add("show");
+        // 👉 ora si può scrollare
+        document.body.style.overflow = "auto";
+        document.querySelector("main").style.opacity = "1";
+    })
   }, 800);
 });
 
@@ -90,7 +95,7 @@ animate();
 */
 
 const tracks = document.querySelectorAll('.carousel-track'); // tutti i caroselli
-const speed = 1; // px/frame
+const speed = 0.7; // px/frame
 const gaps = 20;  // gap tra immagini
 
 tracks.forEach(track => {
