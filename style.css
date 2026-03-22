@@ -204,3 +204,8 @@ body{
 .celebration img{
     object-fit: cover;
 }
+
+footer p{
+    font-size: 10px;
+    color: #6585A7;
+}
