@@ -184,7 +184,7 @@ body{
   transition: opacity 1s ease, transform 0.8s ease;
   pointer-events: none; /* non interferisce con il click */
   z-index: 999;
-  animation: bounce 1.5s infinite alternate;
+  animation: bounce 0.5s infinite alternate;
   padding-bottom: 80px;
 }
 
